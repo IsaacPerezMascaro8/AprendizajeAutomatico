@@ -1,0 +1,133 @@
+{
+  "personas": [
+    "David",
+    "Isaac",
+    "Rodrigo"
+  ],
+  "total_fotos": 1001,
+  "fotos_corruptas": 0,
+  "recuento": {
+    "David": {
+      "A": 86,
+      "E": 103,
+      "I": 111,
+      "O": 91,
+      "U": 104,
+      "Total": 495
+    },
+    "Isaac": {
+      "A": 47,
+      "E": 36,
+      "I": 42,
+      "O": 48,
+      "U": 52,
+      "Total": 225
+    },
+    "Rodrigo": {
+      "A": 49,
+      "E": 55,
+      "I": 60,
+      "O": 58,
+      "U": 59,
+      "Total": 281
+    },
+    "Total": {
+      "A": 182,
+      "E": 194,
+      "I": 213,
+      "O": 197,
+      "U": 215,
+      "Total": 1001
+    }
+  },
+  "resoluciones": [
+    {
+      "persona": "David",
+      "ancho": 1280,
+      "alto": 720,
+      "fotos": 495,
+      "proporcion": 1.778
+    },
+    {
+      "persona": "Isaac",
+      "ancho": 1280,
+      "alto": 720,
+      "fotos": 225,
+      "proporcion": 1.778
+    },
+    {
+      "persona": "Rodrigo",
+      "ancho": 2560,
+      "alto": 1440,
+      "fotos": 281,
+      "proporcion": 1.778
+    }
+  ],
+  "rafagas": [
+    {
+      "persona": "David",
+      "mediana_segundos": 1.0,
+      "mismo_segundo": 29,
+      "a_1_segundo_o_menos": 248
+    },
+    {
+      "persona": "Isaac",
+      "mediana_segundos": 2.0,
+      "mismo_segundo": 0,
+      "a_1_segundo_o_menos": 64
+    },
+    {
+      "persona": "Rodrigo",
+      "mediana_segundos": 2.0,
+      "mismo_segundo": 3,
+      "a_1_segundo_o_menos": 118
+    }
+  ],
+  "phash_por_umbral": [
+    {
+      "umbral_phash": 0,
+      "parejas_misma_letra": 4,
+      "parejas_letra_distinta": 0
+    },
+    {
+      "umbral_phash": 2,
+      "parejas_misma_letra": 17,
+      "parejas_letra_distinta": 20
+    },
+    {
+      "umbral_phash": 4,
+      "parejas_misma_letra": 78,
+      "parejas_letra_distinta": 99
+    },
+    {
+      "umbral_phash": 6,
+      "parejas_misma_letra": 222,
+      "parejas_letra_distinta": 276
+    },
+    {
+      "umbral_phash": 8,
+      "parejas_misma_letra": 480,
+      "parejas_letra_distinta": 586
+    },
+    {
+      "umbral_phash": 10,
+      "parejas_misma_letra": 925,
+      "parejas_letra_distinta": 1168
+    }
+  ],
+  "parejas_comparadas": {
+    "misma_letra": 37285,
+    "letra_distinta": 149520
+  },
+  "casi_identicas": {
+    "umbral_frac_pixeles": 0.020763888888888887,
+    "parejas": 4,
+    "grupos": 4,
+    "fotos_redundantes": 4,
+    "por_persona": {
+      "David": 3,
+      "Rodrigo": 1
+    },
+    "consecutivas": 2
+  }
+}

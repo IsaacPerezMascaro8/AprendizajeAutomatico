@@ -1,0 +1,25 @@
+/home/isaac/miniconda3/envs/lse/lib/python3.11/site-packages/keras/src/trainers/epoch_iterator.py:74: UserWarning: `shuffle=True` was passed, but will be ignored since the data `x` was provided as a tf.data.Dataset. The Dataset is expected to already be shuffled (via `.shuffle(buffer_size)`).
+  self.data_adapter = data_adapters.get_data_adapter(
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1795365944.932299  150257 node_def_util.cc:682] NodeDef mentions attribute use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_18}}
+E0000 00:00:1795365946.932855  150257 meta_optimizer.cc:967] layout failed: INVALID_ARGUMENT: Size of values 0 does not match size of permutation 4 @ fanin shape inStatefulPartitionedCall/M2_profundo_gap_1/bloque1_dropout_1/stateless_dropout/SelectV2-2-TransposeNHWCToNCHW-LayoutOptimizer
+/home/isaac/miniconda3/envs/lse/lib/python3.11/site-packages/keras/src/trainers/epoch_iterator.py:74: UserWarning: `shuffle=True` was passed, but will be ignored since the data `x` was provided as a tf.data.Dataset. The Dataset is expected to already be shuffled (via `.shuffle(buffer_size)`).
+  self.data_adapter = data_adapters.get_data_adapter(
+E0000 00:00:1795366318.032840  150257 node_def_util.cc:682] NodeDef mentions attribute use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_18}}
+##### 1. Análisis de los modelos
+modelo  parametros_totales  entrenables    conv  batchnorm    densa  pct_densa                         mapas_tras_cada_bloque  entrada_a_la_densa  campo_receptivo_ultima_conv_px  tamano_MB_float32
+    M0            18894533     18894533   19392          0 18875141       99.9                          72x128x32 -> 36x64x64              147456                               8               75.6
+    M1             5894501      5892581 1171296       3840  4719365       80.1 72x128x32 -> 36x64x64 -> 18x32x128 -> 9x16x256               36864                              68               23.6
+    M2             1208677      1206757 1171296       3840    33541        2.8 72x128x32 -> 36x64x64 -> 18x32x128 -> 9x16x256                 256                              68                4.8
+    M3             1208677      1206757 1171296       3840    33541        2.8 72x128x32 -> 36x64x64 -> 18x32x128 -> 9x16x256                 256                              68                4.8
+
+Campo receptivo de la última conv: M2 con 1 conv/bloque = 38 px
+Resúmenes en /home/isaac/AprendizajeAutomatico/results/modelos
+
+##### 2. Diagrama
+   /home/isaac/AprendizajeAutomatico/results/figuras/arquitectura_M2.png
+
+##### Comprobación larga (60 épocas, sin EarlyStopping, con augmentation)
+  M2: {'modelo': 'M2', 'fold': 'lopo_Isaac', 'epocas_hechas': 60, 'mejor_epoca': 17, 'val_loss_mejor': np.float64(1.5916), 'val_accuracy_mejor': np.float64(0.295), 'train_accuracy_mejor': np.float64(0.29), 'train_accuracy_ultima': np.float64(0.526), 'val_accuracy_max': np.float64(0.424), 'val_accuracy_media_ultimas_10': np.float64(0.295), 'tiempo_1a_epoca_s': np.float64(10.0), 'tiempo_por_epoca_s': np.float64(6.11), 'tiempo_total_s': 372.1}
+  M2 Dropout solo cabeza: {'modelo': 'M2 Dropout solo cabeza', 'fold': 'lopo_Isaac', 'epocas_hechas': 60, 'mejor_epoca': 1, 'val_loss_mejor': np.float64(1.6305), 'val_accuracy_mejor': np.float64(0.22), 'train_accuracy_mejor': np.float64(0.248), 'train_accuracy_ultima': np.float64(0.408), 'val_accuracy_max': np.float64(0.432), 'val_accuracy_media_ultimas_10': np.float64(0.215), 'tiempo_1a_epoca_s': np.float64(8.7), 'tiempo_por_epoca_s': np.float64(6.17), 'tiempo_total_s': 374.1}
+   /home/isaac/AprendizajeAutomatico/results/figuras/fase3_curvas_largo.png

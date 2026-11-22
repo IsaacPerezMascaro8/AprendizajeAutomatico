@@ -1,0 +1,4 @@
+experimento,epocas,train_acc_final,train_loss_final,val_acc_final,val_loss_final,val_acc_max,val_acc_media_ult10,val_loss_min,tiempo_min,dispositivo
+M2 foto completa 144×256,60,0.298,1.496,0.144,1.927,0.311,0.134,1.553,6.1,
+M2 recorte 128×128,60,0.869,0.393,0.508,1.428,0.697,0.589,0.805,18.0,CPU
+M1 recorte 128×128,60,0.22,1.608,0.238,1.604,0.246,0.238,1.603,17.5,CPU

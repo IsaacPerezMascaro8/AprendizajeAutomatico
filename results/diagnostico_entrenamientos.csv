@@ -1,0 +1,4 @@
+experimento,epocas,train_acc_final,train_loss_final,val_acc_final,val_loss_final,val_acc_max,val_acc_media_ult10,val_loss_min,tiempo_min
+"M2 fotos completas, con aumento, lr 1e-3",60,0.298,1.496,0.144,1.927,0.311,0.134,1.553,6.1
+"M1 sin aumento, lr 0.001",40,0.214,1.607,0.25,1.605,0.303,0.25,1.551,2.4
+"M1 sin aumento, lr 0.0003",40,0.214,1.608,0.25,1.607,0.25,0.25,1.59,2.4

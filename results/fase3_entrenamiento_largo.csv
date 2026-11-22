@@ -1,0 +1,3 @@
+modelo,fold,epocas_hechas,mejor_epoca,val_loss_mejor,val_accuracy_mejor,train_accuracy_mejor,train_accuracy_ultima,val_accuracy_max,val_accuracy_media_ultimas_10,tiempo_1a_epoca_s,tiempo_por_epoca_s,tiempo_total_s
+M2,lopo_Isaac,60,17,1.5916,0.295,0.29,0.526,0.424,0.295,10.0,6.11,372.1
+M2 Dropout solo cabeza,lopo_Isaac,60,1,1.6305,0.22,0.248,0.408,0.432,0.215,8.7,6.17,374.1

@@ -1,0 +1,13 @@
+Modelo: M0_baseline
+Capa                  Tipo                    Salida                  Parámetros
+--------------------------------------------------------------------------------
+conv1                 Conv2D                  144x256x32                     896
+pool1                 MaxPooling2D            72x128x32                        0
+conv2                 Conv2D                  72x128x64                   18.496
+pool2                 MaxPooling2D            36x64x64                         0
+flatten               Flatten                 147456                           0
+densa                 Dense                   128                     18.874.496
+salida                Dense                   5                              645
+--------------------------------------------------------------------------------
+Parámetros totales:        18.894.533
+  no entrenables (medias/varianzas móviles de BN): 0

@@ -1,0 +1,25 @@
+modelo,capa,campo_receptivo_px,salto_px
+M0,conv1,3,1
+M0,pool1,4,2
+M0,conv2,8,2
+M0,pool2,10,4
+M2 (2 conv/bloque),bloque1_conv1,3,1
+M2 (2 conv/bloque),bloque1_conv2,5,1
+M2 (2 conv/bloque),bloque1_pool,6,2
+M2 (2 conv/bloque),bloque2_conv1,10,2
+M2 (2 conv/bloque),bloque2_conv2,14,2
+M2 (2 conv/bloque),bloque2_pool,16,4
+M2 (2 conv/bloque),bloque3_conv1,24,4
+M2 (2 conv/bloque),bloque3_conv2,32,4
+M2 (2 conv/bloque),bloque3_pool,36,8
+M2 (2 conv/bloque),bloque4_conv1,52,8
+M2 (2 conv/bloque),bloque4_conv2,68,8
+M2 (2 conv/bloque),bloque4_pool,76,16
+M2 con 1 conv/bloque,bloque1_conv1,3,1
+M2 con 1 conv/bloque,bloque1_pool,4,2
+M2 con 1 conv/bloque,bloque2_conv1,8,2
+M2 con 1 conv/bloque,bloque2_pool,10,4
+M2 con 1 conv/bloque,bloque3_conv1,18,4
+M2 con 1 conv/bloque,bloque3_pool,22,8
+M2 con 1 conv/bloque,bloque4_conv1,38,8
+M2 con 1 conv/bloque,bloque4_pool,46,16

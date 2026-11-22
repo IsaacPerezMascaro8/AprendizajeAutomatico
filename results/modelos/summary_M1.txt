@@ -1,0 +1,42 @@
+Modelo: M1_profundo_flatten
+Capa                  Tipo                    Salida                  Parámetros
+--------------------------------------------------------------------------------
+bloque1_conv1         Conv2D                  144x256x32                     864
+bloque1_bn1           BatchNormalization      144x256x32                     128
+bloque1_relu1         Activation              144x256x32                       0
+bloque1_conv2         Conv2D                  144x256x32                   9.216
+bloque1_bn2           BatchNormalization      144x256x32                     128
+bloque1_relu2         Activation              144x256x32                       0
+bloque1_pool          MaxPooling2D            72x128x32                        0
+bloque1_dropout       Dropout                 72x128x32                        0
+bloque2_conv1         Conv2D                  72x128x64                   18.432
+bloque2_bn1           BatchNormalization      72x128x64                      256
+bloque2_relu1         Activation              72x128x64                        0
+bloque2_conv2         Conv2D                  72x128x64                   36.864
+bloque2_bn2           BatchNormalization      72x128x64                      256
+bloque2_relu2         Activation              72x128x64                        0
+bloque2_pool          MaxPooling2D            36x64x64                         0
+bloque2_dropout       Dropout                 36x64x64                         0
+bloque3_conv1         Conv2D                  36x64x128                   73.728
+bloque3_bn1           BatchNormalization      36x64x128                      512
+bloque3_relu1         Activation              36x64x128                        0
+bloque3_conv2         Conv2D                  36x64x128                  147.456
+bloque3_bn2           BatchNormalization      36x64x128                      512
+bloque3_relu2         Activation              36x64x128                        0
+bloque3_pool          MaxPooling2D            18x32x128                        0
+bloque3_dropout       Dropout                 18x32x128                        0
+bloque4_conv1         Conv2D                  18x32x256                  294.912
+bloque4_bn1           BatchNormalization      18x32x256                    1.024
+bloque4_relu1         Activation              18x32x256                        0
+bloque4_conv2         Conv2D                  18x32x256                  589.824
+bloque4_bn2           BatchNormalization      18x32x256                    1.024
+bloque4_relu2         Activation              18x32x256                        0
+bloque4_pool          MaxPooling2D            9x16x256                         0
+bloque4_dropout       Dropout                 9x16x256                         0
+flatten               Flatten                 36864                            0
+densa                 Dense                   128                      4.718.720
+densa_dropout         Dropout                 128                              0
+salida                Dense                   5                              645
+--------------------------------------------------------------------------------
+Parámetros totales:         5.894.501
+  no entrenables (medias/varianzas móviles de BN): 1.920

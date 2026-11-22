@@ -1,0 +1,51 @@
+/home/isaac/miniconda3/envs/lse/lib/python3.11/site-packages/keras/src/trainers/epoch_iterator.py:74: UserWarning: `shuffle=True` was passed, but will be ignored since the data `x` was provided as a tf.data.Dataset. The Dataset is expected to already be shuffled (via `.shuffle(buffer_size)`).
+  self.data_adapter = data_adapters.get_data_adapter(
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1795367247.047684  162068 node_def_util.cc:682] NodeDef mentions attribute use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_18}}
+E0000 00:00:1795367248.949309  162068 meta_optimizer.cc:967] layout failed: INVALID_ARGUMENT: Size of values 0 does not match size of permutation 4 @ fanin shape inStatefulPartitionedCall/M2_profundo_gap_1/bloque1_dropout_1/stateless_dropout/SelectV2-2-TransposeNHWCToNCHW-LayoutOptimizer
+E0000 00:00:1795367610.761927  162068 node_def_util.cc:682] NodeDef mentions attribute use_unbounded_threadpool which is not in the op definition: Op<name=MapDataset; signature=input_dataset:variant, other_arguments: -> handle:variant; attr=f:func; attr=Targuments:list(type),min=0; attr=output_types:list(type),min=1; attr=output_shapes:list(shape),min=1; attr=use_inter_op_parallelism:bool,default=true; attr=preserve_cardinality:bool,default=false; attr=force_synchronous:bool,default=false; attr=metadata:string,default=""> This may be expected if your graph generating binary is newer  than this binary. Unknown attributes will be ignored. NodeDef: {{node ParallelMapDatasetV2/_14}}
+/home/isaac/miniconda3/envs/lse/lib/python3.11/site-packages/keras/src/trainers/epoch_iterator.py:74: UserWarning: `shuffle=True` was passed, but will be ignored since the data `x` was provided as a tf.data.Dataset. The Dataset is expected to already be shuffled (via `.shuffle(buffer_size)`).
+  self.data_adapter = data_adapters.get_data_adapter(
+E0000 00:00:1795367614.062248  162068 meta_optimizer.cc:967] layout failed: INVALID_ARGUMENT: Size of values 0 does not match size of permutation 4 @ fanin shape inStatefulPartitionedCall/M1_profundo_flatten_1/bloque1_dropout_1/stateless_dropout/SelectV2-2-TransposeNHWCToNCHW-LayoutOptimizer
+/home/isaac/miniconda3/envs/lse/lib/python3.11/site-packages/keras/src/trainers/epoch_iterator.py:74: UserWarning: `shuffle=True` was passed, but will be ignored since the data `x` was provided as a tf.data.Dataset. The Dataset is expected to already be shuffled (via `.shuffle(buffer_size)`).
+  self.data_adapter = data_adapters.get_data_adapter(
+E0000 00:00:1795367758.134790  162068 meta_optimizer.cc:967] layout failed: INVALID_ARGUMENT: Size of values 0 does not match size of permutation 4 @ fanin shape inStatefulPartitionedCall/M1_profundo_flatten_1/bloque1_dropout_1/stateless_dropout/SelectV2-2-TransposeNHWCToNCHW-LayoutOptimizer
+##### 1a. Resumen de la Fase 3
+                             experimento  epocas  train_acc_final  train_loss_final  val_acc_final  val_loss_final  val_acc_max  val_acc_media_ult10  val_loss_min  sobreajuste_train_acc  sobreajuste_inferencia_acc
+                M0 corto (EarlyStopping)       9            0.346             1.471          0.098           1.826        0.258                0.143         1.582                   1.00                        1.00
+                M1 corto (EarlyStopping)      11            0.230             1.598          0.250           1.608        0.326                0.241         1.596                   0.70                        0.85
+                M2 corto (EarlyStopping)       9            0.236             1.596          0.061           1.687        0.250                0.163         1.606                   0.95                        0.40
+                M3 corto (EarlyStopping)      14            0.250             1.672          0.205           1.783        0.250                0.149         1.706                   1.00                        0.85
+                    M2 largo (60 épocas)      60            0.526             1.113          0.356           2.322        0.424                0.295         1.592                    NaN                         NaN
+M2 Dropout solo cabeza largo (60 épocas)      60            0.408             1.360          0.159           2.463        0.432                0.215         1.631                    NaN                         NaN
+
+##### 1b. Alineación de etiquetas
+  Alineación OK: {'train': 644, 'val': 132} fotos comprobadas una a una (etiqueta = carpeta de origen)
+   /home/isaac/AprendizajeAutomatico/results/figuras/diagnostico_batch_etiquetado.png
+
+##### 1c. Preprocesamiento train / val / test
+               conjunto  fotos     forma   dtype  min  max  media  desviacion
+                  train    644 144x256x3 float32  0.0  1.0  0.495       0.234
+                    val    132 144x256x3 float32  0.0  1.0  0.501       0.250
+                   test    225 144x256x3 float32  0.0  1.0  0.528       0.145
+train tras augmentation    644 144x256x3 float32  0.0  1.0  0.442       0.295
+  Brillo medio por persona: {'David': 0.478, 'Isaac': 0.528, 'Rodrigo': 0.528}
+
+##### 1d. Distribución de predicciones en validación (M2, 60 épocas)
+  M2 (60 épocas): val acc = 0.144
+  Predicciones en validación por clase: {'A': np.int64(8), 'E': np.int64(62), 'I': np.int64(13), 'O': np.int64(15), 'U': np.int64(34)}
+  Matriz de confusión (val):
+predicha  A   E  I   O   U
+real                      
+A         4   0  7   0   6
+E         0  15  2   3   0
+I         1  14  0   0  18
+O         3  12  4   0  10
+U         0  21  0  12   0
+  acc val David: 0.214 (84 fotos)
+  acc val Rodrigo: 0.021 (48 fotos)
+
+##### 1e. M1 sin augmentation con lr 1e-3 y 3e-4 (40 épocas)
+   {'experimento': 'M1 sin aumento, lr 0.001', 'epocas': 40, 'train_acc_final': np.float64(0.214), 'train_loss_final': np.float64(1.607), 'val_acc_final': np.float64(0.25), 'val_loss_final': np.float64(1.605), 'val_acc_max': np.float64(0.303), 'val_acc_media_ult10': np.float64(0.25), 'val_loss_min': np.float64(1.551), 'tiempo_min': 2.4}
+   {'experimento': 'M1 sin aumento, lr 0.0003', 'epocas': 40, 'train_acc_final': np.float64(0.214), 'train_loss_final': np.float64(1.608), 'val_acc_final': np.float64(0.25), 'val_loss_final': np.float64(1.607), 'val_acc_max': np.float64(0.25), 'val_acc_media_ult10': np.float64(0.25), 'val_loss_min': np.float64(1.59), 'tiempo_min': 2.4}
+   /home/isaac/AprendizajeAutomatico/results/figuras/diagnostico_curvas_M1_sinaumento.png

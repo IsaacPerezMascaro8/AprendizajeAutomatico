@@ -1,0 +1,8 @@
+variante,sobreajuste_20_fotos_acc_inferencia,epocas,train_acc_final,val_acc_final,val_loss_min,val_loss_max
+"M2 (BN momentum 0,99, valor por defecto de Keras)",0.2,12,0.312,0.235,1.621,4.981
+"M2 (BN momentum 0,9)",0.75,12,0.312,0.242,1.479,1.91
+M2 con Dropout solo en la cabeza,0.6,12,0.371,0.311,1.639,3.086
+M2 sin Dropout,1.0,12,0.494,0.205,1.719,4.578
+M2 sin BatchNorm ni Dropout,0.25,12,0.214,0.25,1.604,1.61
+M2 con GlobalMaxPooling,0.6,12,0.267,0.28,1.46,1.87
+M1 (Flatten),0.75,12,0.22,0.303,1.559,1.651

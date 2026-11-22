@@ -1,0 +1,5 @@
+modelo,nombre,parametros_totales,entrenables,conv,batchnorm,densa,pct_densa,mapas_tras_cada_bloque,entrada_a_la_densa,campo_receptivo_ultima_conv_px,tamano_MB_float32
+M0,M0_baseline,18894533,18894533,19392,0,18875141,99.9,72x128x32 -> 36x64x64,147456,8,75.6
+M1,M1_profundo_flatten,5894501,5892581,1171296,3840,4719365,80.1,72x128x32 -> 36x64x64 -> 18x32x128 -> 9x16x256,36864,68,23.6
+M2,M2_profundo_gap,1208677,1206757,1171296,3840,33541,2.8,72x128x32 -> 36x64x64 -> 18x32x128 -> 9x16x256,256,68,4.8
+M3,M3_gap_l2,1208677,1206757,1171296,3840,33541,2.8,72x128x32 -> 36x64x64 -> 18x32x128 -> 9x16x256,256,68,4.8

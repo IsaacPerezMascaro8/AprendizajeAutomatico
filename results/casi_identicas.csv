@@ -1,0 +1,5 @@
+persona,letra_1,orden_1,archivo_1,letra_2,orden_2,archivo_2,misma_letra,dist_phash,frac_pixeles_cambiados
+Rodrigo,U,27,WIN_20261122_12_45_49_Pro.jpg,U,28,WIN_20261122_12_45_50_Pro.jpg,True,4,0.00875
+David,A,50,WIN_20261122_13_52_33_Pro.jpg,A,55,WIN_20261122_13_52_39_Pro (2).jpg,True,8,0.012708333333333334
+David,E,9,WIN_20261120_19_08_59_Pro.jpg,E,10,WIN_20261120_19_09_02_Pro.jpg,True,2,0.014652777777777778
+David,A,56,WIN_20261122_13_52_39_Pro.jpg,A,62,WIN_20261122_13_52_47_Pro.jpg,True,10,0.019375

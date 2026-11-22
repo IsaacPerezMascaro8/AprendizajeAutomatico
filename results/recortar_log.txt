@@ -1,0 +1,54 @@
+INFO: [environment.cc:36] Creating LiteRT environment with options
+INFO: [accelerator_registry.cc:54] RegisterAccelerator: ptr=0x74749c003690, name=CpuAccelerator
+INFO: [cpu_registry.cc:75] XNNPACK CPU accelerator registered.
+INFO: [compiled_model.cc:1022] Flatbuffer model initialized directly from incoming litert model.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+INFO: [environment.cc:36] Creating LiteRT environment with options
+INFO: [accelerator_registry.cc:54] RegisterAccelerator: ptr=0x74749c071f50, name=CpuAccelerator
+INFO: [cpu_registry.cc:75] XNNPACK CPU accelerator registered.
+INFO: [compiled_model.cc:1022] Flatbuffer model initialized directly from incoming litert model.
+INFO: [environment.cc:36] Creating LiteRT environment with options
+INFO: [accelerator_registry.cc:54] RegisterAccelerator: ptr=0x747484003690, name=CpuAccelerator
+INFO: [cpu_registry.cc:75] XNNPACK CPU accelerator registered.
+INFO: [compiled_model.cc:1022] Flatbuffer model initialized directly from incoming litert model.
+INFO: [environment.cc:36] Creating LiteRT environment with options
+INFO: [accelerator_registry.cc:54] RegisterAccelerator: ptr=0x747484071230, name=CpuAccelerator
+INFO: [cpu_registry.cc:75] XNNPACK CPU accelerator registered.
+INFO: [compiled_model.cc:1022] Flatbuffer model initialized directly from incoming litert model.
+WARNING: Logging before InitGoogle() is written to STDERR
+W0000 00:00:1795367152.974166  161640 inference_runner_litert.cc:1433] Input tensor memory is not aligned according to LiteRt's memory alignment requirements. Reallocating memory and copying data.
+W0000 00:00:1795367152.985282  161640 landmark_projection_calculator.cc:81] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+Detectadas: 958 de 1001; fallos: 43 (4.3%)
+Detectadas en la 2ª pasada (confianza 0,2): 46
+
+Fallos por persona y letra:
+letra    A   E  I  O  U  Total
+persona                       
+David    4  16  4  4  1     29
+Isaac    0   1  0  1  0      2
+Rodrigo  2   3  3  0  4     12
+Total    6  20  7  5  5     43
+
+Ancho de la mano (px en una imagen de 256 de ancho):
+          min   25%   50%   75%    max
+persona                               
+David     8.9  24.4  30.4  39.2   93.0
+Isaac    11.2  26.4  32.6  40.8  113.3
+Rodrigo   8.3  19.8  24.1  29.8   75.4
+
+/home/isaac/AprendizajeAutomatico/results/figuras/recortes_ejemplos.png
+/home/isaac/AprendizajeAutomatico/results/figuras/revision/recortes_fallos.jpg
+Exception ignored in: <function HandLandmarker.__del__ at 0x7474b5b78c20>
+Traceback (most recent call last):
+  File "/home/isaac/miniconda3/envs/lse/lib/python3.11/site-packages/mediapipe/tasks/python/vision/hand_landmarker.py", line 614, in __del__
+  File "/home/isaac/miniconda3/envs/lse/lib/python3.11/site-packages/mediapipe/tasks/python/vision/hand_landmarker.py", line 590, in close
+  File "/home/isaac/miniconda3/envs/lse/lib/python3.11/site-packages/mediapipe/tasks/python/core/serial_dispatcher.py", line 74, in shutdown_aware_handler
+  File "/home/isaac/miniconda3/envs/lse/lib/python3.11/site-packages/mediapipe/tasks/python/core/mediapipe_c_utils.py", line 126, in dispatcher_wrapper
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function HandLandmarker.__del__ at 0x7474b5b78c20>
+Traceback (most recent call last):
+  File "/home/isaac/miniconda3/envs/lse/lib/python3.11/site-packages/mediapipe/tasks/python/vision/hand_landmarker.py", line 614, in __del__
+  File "/home/isaac/miniconda3/envs/lse/lib/python3.11/site-packages/mediapipe/tasks/python/vision/hand_landmarker.py", line 590, in close
+  File "/home/isaac/miniconda3/envs/lse/lib/python3.11/site-packages/mediapipe/tasks/python/core/serial_dispatcher.py", line 74, in shutdown_aware_handler
+  File "/home/isaac/miniconda3/envs/lse/lib/python3.11/site-packages/mediapipe/tasks/python/core/mediapipe_c_utils.py", line 126, in dispatcher_wrapper
+TypeError: 'NoneType' object is not callable

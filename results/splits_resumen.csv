@@ -1,0 +1,13 @@
+split,conjunto,A,E,I,O,U,Total,porcentaje,rafagas_compartidas
+lopo_David,train,85,79,81,88,87,420,42.0,0
+lopo_David,val,11,12,21,18,24,86,8.6,0
+lopo_David,test,86,103,111,91,104,495,49.5,0
+lopo_Isaac,train,118,138,138,120,130,644,64.3,0
+lopo_Isaac,val,17,20,33,29,33,132,13.2,0
+lopo_Isaac,test,47,36,42,48,52,225,22.5,0
+lopo_Rodrigo,train,110,116,130,113,131,600,59.9,0
+lopo_Rodrigo,val,23,23,23,26,25,120,12.0,0
+lopo_Rodrigo,test,49,55,60,58,59,281,28.1,0
+aleatorio,train,127,136,149,137,151,700,69.9,100
+aleatorio,val,27,29,32,30,32,150,15.0,100
+aleatorio,test,28,29,32,30,32,151,15.1,100

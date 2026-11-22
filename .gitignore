@@ -1,0 +1,38 @@
+# Fotos originales de cada persona (datos personales, solo lectura, no se suben)
+/David/
+/Isaac/
+/Rodrigo/
+/Juan/
+/dataset_limpio/
+*.jpg
+*.jpeg
+*.png
+!results/figuras/*.png
+
+# Hojas de contacto para revisión a ojo (salen caras)
+results/figuras/revision/
+
+# Modelos entrenados y modelo de MediaPipe (pesan mucho)
+models/
+*.keras
+*.h5
+*.task
+
+# Caché de imágenes redimensionadas y recortes (se regenera sola)
+cache/
+*.npz
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Archivos temporales y del sistema
+*.tmp
+*.log
+*~
+.DS_Store
+.vscode/
+.idea/
+.claude/
+logs/
